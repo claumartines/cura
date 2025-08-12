@@ -1,48 +1,172 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Forumario Cura e Libertação</title>
-    <style>
-        body {
-            background-color: #1a252f;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-        }
-        img {
-            height: 200px; /* altura fixa */
-            width: auto; /* mantém proporção */
-            display: block;
-        }
-        a.button {
-            margin-top: 20px;
-            margin: 30px;
-            padding: 12px 24px;
-            background-color: transparent;
-            border: 3px solid white;
-            color: white;
-            font-size: 18px;
-            text-decoration: none;
-            border-radius: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-        }
-        a.button:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forumario Cura e Libertação</title>
+
+  <!-- Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#1a252f;
+      --text:#ffffff;
+    }
+
+    /* Base */
+    html,body{
+      height:100%;
+    }
+    body{
+      background-color: var(--bg);
+      margin:0;
+      padding:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: "Montserrat", Arial, "Helvetica Neue", Helvetica, sans-serif;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Layout */
+    .wrapper{
+      width:100%;
+      max-width: 900px;
+      padding: 24px;
+      box-sizing: border-box;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      text-align:center;
+      gap: 20px;
+    }
+
+    /* Imagem: altura fixa, sem distorcer, centra sempre */
+    .logo{
+      height: 200px;         /* altura fixa */
+      width: auto;           /* mantém proporção */
+      max-width: 100%;
+      display:block;
+      object-fit: contain;
+    }
+
+    /* Tipografia geral de texto */
+    .lead{
+      font-weight: 400;
+      font-size: 1.2em;
+      line-height: 1.6em;
+      letter-spacing: 0em;
+      margin: 0;
+    }
+
+    /* Títulos */
+    h3{
+      font-weight: 400;
+      font-style: normal;
+      font-size: 3.5em;        /* base desktop */
+      line-height: 1.3em;
+      text-transform: none;
+      letter-spacing: -0.05em;
+      margin: 0;
+    }
+    h1{
+      font-weight: 600;
+      font-size: 2.2em;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
+
+    /* Botão conforme referência */
+    a:link, a:visited{
+      text-decoration: none;
+    }
+    .sp-button{
+      position: relative;
+      box-sizing: border-box;
+      display: inline-block;
+      text-align: center;
+      outline: 0;
+      cursor: pointer;
+
+      font-family: "Montserrat", Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 1.5em;
+      text-transform: none;
+      letter-spacing: 0.02em;
+
+      padding: 10px 15px;               /* base */
+      border: 2px solid var(--text);    /* borda branca */
+      border-radius: 0px;
+      color: var(--text);
+
+      background-color: transparent !important;                 /* .sp-button:not(.extrude):not(.solid) */
+    }
+    .sp-button.fill{ width: 100%; }
+
+    /* Ajustes pedidos */
+    .sp-button.extra-pad{ padding: 16px; } /* element.style padding:16px */
+    .btn-wrap{ width:100%; max-width: 520px; }
+    .button-margin{ margin: 5px; }         /* margem de 5px no botão */
+
+    /* Hover/active sutis sem perder o estilo transparente */
+    .sp-button:hover{
+      background-color: rgba(255,255,255,0.06) !important;
+    }
+    .sp-button:active{
+      transform: translateY(1px);
+    }
+
+    /* Espaçamentos entre blocos */
+    .stack-sm{ margin-top: 10px; }
+    .stack-md{ margin-top: 16px; }
+    .stack-lg{ margin-top: 24px; }
+
+    /* Responsividade */
+    @media (max-width: 768px){
+      .logo{ height: 160px; }
+      h3{ font-size: 2.4em; }
+      h1{ font-size: 1.6em; }
+      .sp-button{ font-size: 1.2em; }
+    }
+    @media (max-width: 420px){
+      .logo{ height: 140px; }
+      h3{ font-size: 2em; }
+      h1{ font-size: 1.35em; }
+      .sp-button{ font-size: 1.05em; }
+    }
+  </style>
 </head>
 <body>
-    <img src="https://claumartines.github.io/cura/img/logo.png" alt="Logo">
-    <a href="https://form.typeform.com/to/JIYzB2OT" target="_blank" class="button">
-        Forumario Cura e Libertação
-    </a>
+  <main class="wrapper" role="main">
+    <!-- IMAGEM (mantida) -->
+    <img class="logo" src="https://claumartines.github.io/cura/img/logo.png" alt="Logo Cura e Libertação">
+
+    <!-- TEXTO H3: Lisboa -->
+    <h3 class="stack-sm">Lisboa</h3>
+
+    <!-- TEXTO H1: Cura e Libertação -->
+    <h1 class="stack-md">Cura e Libertação</h1>
+
+    <!-- Opcional: texto auxiliar (usa estilo de “texto” que você indicou) -->
+    <!-- <p class="lead stack-md">Descrição curta aqui, se desejar.</p> -->
+
+    <!-- Botão -->
+    <div class="btn-wrap stack-lg">
+      <a
+        class="sp-button fill extra-pad button-margin"
+        href="https://form.typeform.com/to/JIYzB2OT"
+        target="_blank"
+        rel="noopener"
+        aria-label="Começar: Preencher o Formulário (abre em nova aba)"
+      >
+        Começar Preencher o Formulário
+      </a>
+    </div>
+  </main>
 </body>
 </html>
